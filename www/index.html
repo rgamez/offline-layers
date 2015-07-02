@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"-->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <script type="text/javascript" src="lib/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/leaflet.css">
+        <link rel="stylesheet" type="text/css" href="css/ol.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Offline Maps</title>
+    </head>
+    <body>
+        <div id="leaflet-page" data-role="page">
+            <div data-role="header" data-id="persistent-header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul class="ui-grid-a">
+                        <li class="ui-block-a"><a href="#leaflet-page" class="ui-state-persist ui-btn-active" data-theme="a">Leaflet</a></li>
+                        <li class="ui-block-b"><a href="#openlayers-page" data-theme="a">Openlayers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+                <div id="leaflet-map"></div>
+            </div>
+        </div>
+        <div id="openlayers-page" data-role="page">
+            <div data-role="header" data-id="persistent-header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul class="ui-grid-a">
+                        <li class="ui-block-a"><a href="#leaflet-page" data-theme="a">Leaflet</a></li>
+                        <li class="ui-block-b"><a href="#openlayers-page" class="ui-state-persist ui-btn-active" data-theme="a">Openlayers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+                <div id="openlayers-map"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="lib/lodash.js"></script>
+        <script type="text/javascript" src="lib/leaflet.js"></script>
+        <script type="text/javascript" src="lib/ol.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

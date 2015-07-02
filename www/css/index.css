@@ -1,0 +1,28 @@
+html,
+body,
+.ui-page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.ui-page,
+.ui-page * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-page .ui-content {
+    padding: 0;
+    height: inherit;
+}
+
+.ui-icon-loading {
+  background: url(../img/ajax-loader.gif);
+  background-size: 2.875em 2.875em;
+}
+
+#openlayers-map,
+#leaflet-map {
+    height: 100%;
+    width: 100%;
+}
